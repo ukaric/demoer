@@ -10,3 +10,17 @@ Includes:
 * Favicon generator
 * ESlint with prettier integration
 * ES6 via Babel
+
+### Running the demo
+
+> yarn run dev
+
+Runs development build accessable at `localhost:9000`
+
+> yarn run build
+
+Build the assets including hasing assets and creating favicons
+
+> yarn run deploy
+
+Deploys `./build` folder with Now giving you access to URL which you can share
