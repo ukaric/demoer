@@ -13,13 +13,13 @@ Includes:
 
 ### Running the demo
 
-> yarn run dev
+> yarn run start
 
 Runs development build accessable at `localhost:9000`
 
 > yarn run build
 
-Build the assets including hasing assets and creating favicons
+Build the assets including hashing assets and creating favicons
 
 > yarn run deploy
 

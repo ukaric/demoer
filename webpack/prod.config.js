@@ -18,8 +18,35 @@ module.exports = merge(baseConfig, {
         test: /\.scss|css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
+          use: ['css-loader', 'resolve-url-loader', 'sass-loader?sourceMap']
         })
+      },
+      {
+        test: /.*\.(gif|png|jpe?g)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8000,
+              name: '[name][sha512:hash:base64:7].[ext]',
+              outputPath: 'img/'
+            }
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              optipng: {
+                optimizationLevel: 7
+              },
+              pngquant: {
+                quality: '65-90'
+              },
+              mozjpeg: {
+                quality: 65
+              }
+            }
+          }
+        ]
       }
     ]
   },
